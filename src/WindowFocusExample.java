@@ -1,15 +1,28 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
 public class WindowFocusExample {
+    private static int x = 1;
+    private static JFrame frame;
+
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Window Focus Example");
+        frame = new JFrame("Window Focus Example");
+        frame.setLayout(new FlowLayout());
         JLabel label = new JLabel("Window is not in focus.");
 
+        JButton addButton = new JButton("Add Label");
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.add(new JLabel("I am Label " + x++));
+                frame.revalidate();
+                frame.repaint();
+            }
+        });
+
         frame.add(label);
+        frame.add(addButton);
         frame.setSize(300, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
