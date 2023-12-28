@@ -68,8 +68,6 @@ public class Q7 {
             @Override
             public void mousePressed(MouseEvent e) {
                 startPoint = e.getPoint();
-                endPoint = e.getPoint();
-                drawingPanel.repaint();
             }
 
             @Override
