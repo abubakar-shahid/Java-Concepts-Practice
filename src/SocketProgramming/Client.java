@@ -1,18 +1,9 @@
 package SocketProgramming;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
-/**
- * @author anosha khan
- */
-//192.168.1.104
 public class Client {
     public static void main(String[] args) throws IOException {
         Socket s = new Socket("192.168.98.58", 80);
@@ -30,6 +21,5 @@ public class Client {
         }
         dout.close();
         s.close();
-
     }
 }
