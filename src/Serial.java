@@ -15,30 +15,29 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author anosha khan
  */
 public class Serial implements Serializable {
-    private static final long serialVersionUID=1L;
-    static int i=0;
+    private static final long serialVersionUID = 1L;
+    static int i = 0;
     int id;
     transient String pass;
     String name;
-    Serial(int i,String p,String n)
-    {
-        i=i+10;
-        id=i;
-        name=n;
-        pass=p;
+
+    Serial(int i, String p, String n) {
+        i = i + 10;
+        id = i;
+        name = n;
+        pass = p;
         System.out.println("Constructor called");
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Serial ss=new Serial(12,"1234","ali");
-        Serial s1=new Serial(12,"22","343");
+        Serial ss = new Serial(12, "1234", "ali");
+        Serial s1 = new Serial(12, "22", "343");
         try {
-            FileOutputStream fout=new FileOutputStream("F.txt");
-            ObjectOutputStream o=new ObjectOutputStream(fout);
+            FileOutputStream fout = new FileOutputStream("F.txt");
+            ObjectOutputStream o = new ObjectOutputStream(fout);
             o.writeObject(ss);
             o.flush();
             o.close();
@@ -47,10 +46,10 @@ public class Serial implements Serializable {
             Logger.getLogger(Serial.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        FileInputStream fin=new FileInputStream("F.txt");
-        ObjectInputStream oi=new ObjectInputStream(fin);
-        Serial a=(Serial)oi.readObject();
-        System.out.println(a.id+" "+a.name+" "+a.pass+" "+a.i);
+        FileInputStream fin = new FileInputStream("F.txt");
+        ObjectInputStream oi = new ObjectInputStream(fin);
+        Serial a = (Serial) oi.readObject();
+        System.out.println(a.id + " " + a.name + " " + a.pass + " " + a.i);
     }
 
 }
