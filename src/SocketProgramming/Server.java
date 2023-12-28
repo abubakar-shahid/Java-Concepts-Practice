@@ -45,7 +45,7 @@ public class Server {
                 } catch (IOException i) {
                     System.out.println(i);
                 }
-                System.out.println("Emter message for clinet");
+                System.out.println("Enter message for clinet");
                 str2 = sin.next();
                 out.writeUTF(str2);
                 out.flush();
