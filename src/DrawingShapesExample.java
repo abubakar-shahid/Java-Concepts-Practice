@@ -56,13 +56,13 @@ public class DrawingShapesExample extends JFrame {
 
         switch (shapeType) {
             case 0:
-                drawLine(g, 50, 50, 200, 200);
+                drawLine(g, 100, 100, 200, 200);
                 break;
             case 1:
-                drawRectangle(g, 50, 50, 150, 100);
+                drawRectangle(g, 100, 100, 150, 100);
                 break;
             case 2:
-                drawCircle(g, 200, 100, 50);
+                drawCircle(g, 200, 200, 50);
                 break;
         }
     }
