@@ -5,19 +5,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Q4 extends JFrame  {
-
+public class Q4 extends JFrame {
     private static final int CROSS_SIZE = 10;
     private int currentX = 200;
     private int currentY = 200;
 
     public Q4() {
-        // Set up the JFrame
+
         setTitle("Move Cross");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Add buttons to the South region labeled "North", "South", "East", and "West"
         JButton northButton = new JButton("North");
         JButton southButton = new JButton("South");
         JButton eastButton = new JButton("East");
@@ -36,7 +34,6 @@ public class Q4 extends JFrame  {
 
         add(buttonPanel, BorderLayout.SOUTH);
 
-        // Show the JFrame
         setVisible(true);
     }
 
